@@ -1,0 +1,160 @@
+<section id="form">
+<!-- Extended material form grid -->
+<h3>Gratis Derbigum offerteaanvraag
+  </h3>
+<br><br>
+<form [formGroup]="validatingForm">
+    <!-- Grid row -->
+
+    <div class="row">
+        <div class="col-md-6">
+          <mdb-select [options]="optionsSelect" id="sex" placeholder="Kies een optie" required></mdb-select>
+          <label for="sex">Aanspreektitel</label>
+        </div>
+      </div>
+      <br>
+    <div class="form-row">
+      <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col">
+            <!-- Material input -->
+            <div class="md-form ">
+              <input mdbInput type="text" class="form-control" placeholder="First name" id="first" required>
+              <label for="first">Voornaam</label>
+              <!-- <mdb-error *ngIf="input.invalid && (input.dirty || input.touched)">Input invalid</mdb-error>
+              <mdb-success *ngIf="input.valid && (input.dirty || input.touched)">Input valid</mdb-success> -->
+            </div>
+          </div>
+          <!-- Grid column -->
+      
+          <!-- Grid column -->
+          <div class="col">
+            <!-- Material input -->
+            <div class="md-form">
+              <input mdbInput type="text" class="form-control" placeholder="Last name" id="last" required>
+              <label for="last">Naam</label>
+            </div>
+          <!-- Grid column -->
+        </div>
+      <!-- Grid column -->
+  
+      </div>
+      <div class="form-row">
+      <div class="md-form col-md-6">
+          <mdb-icon fas icon="envelope"></mdb-icon>
+          <input type="email" id="email" class="form-control" mdbValidate mdbInput formControlName="email" required>
+          <label for="email">E-mail adres</label>
+          <small id="emailHelp2" class="form-text text-muted">We'll never share your email with anyone.</small>
+      </div>
+
+      <div class="md-form col-md-6">
+          <mdb-icon fas icon="phone"></mdb-icon>
+          <input type="text" id="inputIconEx1" class="form-control" id="phone" mdbInput required>
+          <label for="phone">Telefoonnummer</label>
+          <small id="emailHelp2" class="form-text text-muted">We'll never share your phone with anyone.</small>
+        </div>
+      </div>
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-12">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input mdbInput type="text" class="form-control" id="inputAddressMD" placeholder="Straat + nr" required>
+          <label for="inputAddressMD">Adres</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  
+    <!-- Grid row -->
+    <div class="form-row">
+      <!-- Grid column -->
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input mdbInput type="text" class="form-control" id="inputCityMD" required>
+          <label for="inputCityMD">Gemeente</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+  
+      <!-- Grid column -->
+      <div class="col-md-6">
+        <!-- Material input -->
+        <div class="md-form form-group">
+          <input mdbInput type="text" class="form-control" id="inputZipMD" required>
+          <label for="inputZipMD">Postcode</label>
+        </div>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <div class="col-md-6">
+      <!-- Material unchecked -->
+      <div class="form-check">
+          <h5>Is het adres van de werfadres gelijk aan bovenstaand adres?</h5>
+          <input type="radio" class="form-check-input" id="materialUnchecked2" [value]="false"
+                 formControlName="reactiveRadio" name="reactiveRadio">
+          <label class="form-check-label" for="materialUnchecked2">Ja</label>
+        </div>
+      
+        <div class="form-check">
+          <input type="radio" class="form-check-input" id="materialChecked2" [value]="true"
+                 formControlName="reactiveRadio" name="reactiveRadio">
+          <label class="form-check-label" for="materialChecked2">Nee</label>
+        </div>
+    </div>
+<hr>
+    <div class="col-md-12 mt-5">
+        <div class="col-md-6">
+          <mdb-select [options]="typeBouw" id="typeBouw" placeholder="Kies een optie" required></mdb-select>
+          <label for="typeBouw">Type Bouw</label>
+        </div>
+      </div>
+
+      <div class="form-row">
+      <div class="col-md-6 mt-5">
+          <!-- Material input -->
+          <div class="md-form form-group">
+            <input mdbInput type="text" class="form-control" id="area" required>
+            <label for="area">Oppervlakte (m²)</label>
+          </div>
+        </div>
+
+      <div class="col-md-6 mt-5">
+          <!-- Material input -->
+          <div class="md-form form-group">
+              <mdb-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="'Datum uitvoering'" [(ngModel)]="model"
+              required></mdb-date-picker>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="col-md-12 mt-5">
+            <div class="md-form">
+                <textarea type="text" id="form7" class="md-textarea md-textarea-auto form-control" mdbInput></textarea>
+                <label for="form7">Meer info (optioneel)</label>
+            </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-12 mt-5">
+            <div class="file-field md-form">
+                <div mdbBtn color="primary" size="sm" class="waves-light" mdbWavesEffect>
+                  <span>Choose file</span>
+                  <input type="file" mdbFileSelect (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path" type="text" placeholder="Upload your file" [value]="showFiles()">
+                </div>
+              </div>
+              <button class="btn btn-md btn-primary" (click)="startUpload()">Start uploading</button>
+        </div>
+      </div>
+    <!-- Grid row -->
+    <button type="submit" class="btn btn-primary btn-md mt-5 rounded">Gratis offerte aanvragen !</button>
+  </form>
+  <!-- Extended material form grid -->
+</section>

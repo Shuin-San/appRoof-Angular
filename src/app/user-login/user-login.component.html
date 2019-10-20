@@ -1,0 +1,89 @@
+<app-pro-navbar></app-pro-navbar>
+<div class="container">
+
+  
+  <section id="header_section" class="little_margin">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4 offset-md-4">
+        </div>
+      
+      <div class="container">
+      <div class="row">
+        <div class="col-md-3">        
+          <img class="mar-top" src='https://derbigum.be/nl/wp-content/uploads/sites/2/2017/06/logo-mobile.png' alt="Derbigum België">
+        </div>
+        <div class="col-md-3"> </div>
+        <div class="col-md-6 text-right">
+          <app-login></app-login>
+        </div>
+      </div>
+      </div>
+      </section>
+
+
+      <!-- Header Section END -->
+
+<!-- Secondary Navbar -->
+      <!--Navbar-->
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light rgba-black-slight">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+      <a class="navbar-brand" routerLink="/pro"><i class="fa fa-home"></i></a></mdb-navbar-brand>
+    
+    <!-- Collapsible content -->
+    <links>
+  
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <!-- Dropdown -->
+  
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Dashboard</a>
+            </li>
+  
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Mijn Leads <mdb-badge primary="true">2</mdb-badge></a>
+            </li>
+  
+            <li class="nav-item right">
+                <a class="nav-link waves-light" mdbWavesEffect>Mijn projecten</a>
+            </li>
+
+            <li class="nav-item right">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/myDerbigum/approof">APPROOF&reg;</a>
+            </li>
+            
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            
+          <li class="nav-item">
+              <mdb-icon fas icon="bell" class="left red-text"></mdb-icon> Notificaties - <mdb-badge danger="true">1</mdb-badge> 
+              
+        </ul>
+        <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
+    
+    </mdb-navbar>
+    <!--/.Navbar-->
+  
+<!-- End secondary navbar -->
+
+<!-- start main body-->
+  <div class="container">
+
+
+    <div id="okta-signin-container"></div>
+
+    <!-- end choose pro type -->
+    
+    <!-- Find derbigum specialist Start -->
+    <app-find-dealer></app-find-dealer>
+    <!-- Find Derbigum Specialist End -->
+
+  </div>
+</div>
+<app-footer></app-footer>

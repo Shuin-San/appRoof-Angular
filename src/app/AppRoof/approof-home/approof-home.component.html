@@ -1,0 +1,230 @@
+<app-pro-navbar></app-pro-navbar>
+<div class="container">
+
+  
+  <section id="header_section" class="little_margin">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4 offset-md-4">
+        </div>
+      
+      <div class="container">
+      <div class="row">
+        <div class="col-md-3">        
+          <img class="mar-top" src='https://derbigum.be/nl/wp-content/uploads/sites/2/2017/06/logo-mobile.png' alt="Derbigum België">
+        </div>
+        <div class="col-md-3"> </div>
+        <div class="col-md-6 text-right">
+            <app-login></app-login>
+        </div>
+      </div>
+      </div>
+      </section>
+
+
+      <!-- Header Section END -->
+
+<!-- Secondary Navbar -->
+      <!--Navbar-->
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light rgba-black-slight">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand>
+      <a class="navbar-brand" routerLink="/pro"><i class="fa fa-home"></i></a></mdb-navbar-brand>
+    
+    <!-- Collapsible content -->
+    <links>
+  
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <!-- Dropdown -->
+  
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Dashboard</a>
+            </li>
+  
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Mijn Leads <mdb-badge primary="true">2</mdb-badge></a>
+            </li>
+  
+            <li class="nav-item right">
+                <a class="nav-link waves-light" mdbWavesEffect>Mijn projecten</a>
+            </li>
+            
+            <li class="nav-item right">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/myDerbigum/approof">APPROOF&reg;</a>
+            </li>
+            
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            
+          <li class="nav-item">
+              <mdb-icon fas icon="bell" class="left red-text"></mdb-icon> Notificaties - <mdb-badge danger="true">1</mdb-badge> 
+              
+        </ul>
+        <!-- Links -->
+    </links>
+    <!-- Collapsible content -->
+    
+    </mdb-navbar>
+    <!--/.Navbar-->
+  
+<!-- End secondary navbar -->
+
+<!-- start main body-->
+
+
+
+    <!-- start approof home -->
+    <section id="approof">
+      <div id="appRoofContainer" style="min-height: 50vh">
+        <div id="filterDiv" *ngIf=formShow [ngClass]="filterDivStatus ? 'animated fadeIn' : 'animated fadeOut'"  data-wow-delay='1s'>
+          <div class="card card-image" style="background-color: #e5e5e5">
+            <form #searchForm="ngForm" (ngSubmit)="showPost(searchForm) && animateApproof()">
+            <div class="text-black text-center py-5 px-4 my-5" >
+                
+              <div class="row">
+                <h1 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>{{this.langFields.headermsg}}</strong></h1>
+                
+                <!-- render the filters -->
+                  <div class="col-md-6" style="padding-top:20px; padding-bottom:50px; font-size:14px;" *ngFor='let filter of filters;'>
+                    <strong>{{filter.name}}</strong>
+                    <hr>
+
+                    <!-- If single -->
+                    <div class="row" *ngIf='filter.type === "type.single"'>
+                      <div class="col">
+                      <select id={{filter.id}} name={{filter.name}} class="browser-default custom-select" ngModel>
+                        <option value="0" selected>{{this.langFields.all}}</option>
+                        <option *ngFor='let option of filter.filterDetails'value={{option.id}}>{{option.name}}</option>
+                      </select>
+                    </div>
+                    </div>
+
+                    <!-- If multi -->
+                    <div class="row" *ngIf='filter.type === "type.multi"'>
+
+                        <mdb-select [options]="options" [multiple]="true" [highlightFirst]="false" placeholder="{{filter.name}}" ngModel name={{filter.name}}></mdb-select>
+                      
+                        <!-- <div class="col-md-6" style="text-align: left;" *ngFor='let option of filter.filterDetails; let i = index;'>
+                      
+                        <mdb-checkbox class="checkbox-warning-filled"[filledIn]="true" [inline]="true" [default]="true" [id]="option.id">{{option.name}}</mdb-checkbox>
+                        
+                      </div>-->
+                    </div> 
+                  </div>
+                  <br>
+          
+              </div>
+            <button type="submit" mdbBtn color="black" outline="true" class="waves-light" mdbWavesEffect (click)="animateApproof()">
+              <mdb-icon fas icon="filter" class="left"></mdb-icon>{{this.langFields.applyFilters}}
+            </button>
+            <hr> Generated URL : {{payload}}
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="resultDiv" *ngIf="!formShow" [ngClass]="resultDivStatus ? 'animated fadeIn' : 'animated fadeOut'" data-wow-delay='1s'>
+            <div class="card card-image" style="background-color: #e5e5e5;">
+              
+              <div class="text-black text-center py-5 px-4 my-5" >
+                  
+                <div class="row">
+                  
+                  <div class="col-md-9">
+                  <h1 class="card-title h1-responsive pt-3 mb-5 font-bold">
+                    <strong>{{this.langFields.headermsg_solutionList}}</strong></h1>
+                  </div>
+                  <div class="col-md-3">
+                      <button type="submit" mdbBtn color="black" outline="true" class="waves-light" mdbWavesEffect (click)="showFilters()">
+                          {{this.langFields.modify_filters}}
+                        </button>
+                  </div>
+                  <div class="col-md-12" *ngIf="!resultsLoaded">
+                    Loading<br>
+                    <img src="https://i.gifer.com/Jx6X.gif" width="100px" alt="loader">
+                    <mdb-progress-bar class="progress primary-color-dark" mode="indeterminate"></mdb-progress-bar>
+                  </div>
+
+                  <div class="col-md-12" *ngIf="resultsLoaded">
+                      <nav aria-label="Page navigation">
+                          <ul class="pagination pg-blue pagination-sm">
+                            <li class="page-item" *ngFor="let page of pagination; let i = index;" (click)='resultPage(page-1)' [ngClass]="{'active': this.currentPage === i}" ><a class="page-link" mdbWavesEffect>                      {{page}}
+                            </a></li>
+                          </ul>
+                        </nav>
+                     <!--Card-->
+                    <span *ngFor=' let result of paginatedResults; let i = index; '>
+                        <mdb-card class="text-left mb-3">
+                            <mdb-card-header class="text-muted">#{{result.id}}</mdb-card-header>
+                            <div class="row">
+                              
+                              <div class="col-4">
+                                <img *ngIf="result.file === undefined" src="https://beta.derbigum.be/fr/wp-content/uploads/sites/3/2017/04/cube-logo_400x400-150x150.png" style='width:100%;' alt='{{result.name}}'>
+
+                                <img *ngIf="result.file" src='https://approof.derbigum.com/media/cache/thumbnailsScale/uploads/predefined/{{result.file}}' style="width:100%;" alt='{{result.name}}'>
+
+                              </div>
+                              <div class="col-8">
+                                <mdb-card-body>
+                                  <blockquote class="blockquote mb-0">
+                                    <mdb-card-title>
+                                      <h5>{{result.name}}</h5>
+                                      </mdb-card-title>
+                                      <mdb-card-text *ngIf='result.description' [innerHTML]="result.description | keepHtml">
+                                      </mdb-card-text>
+                                      <mdb-card-text *ngIf='!result.description' >
+                                        <br>
+                                        <br>
+                                        <br>
+                                      </mdb-card-text>
+                                      <a target="_blank"  [routerLink]="[result.id]">
+                                        <button mdbBtn type="button" mdbWavesEffect>
+                                       
+                                        {{langFields.view_button}}
+                                        </button>
+                                      </a>
+                                      
+                                  </blockquote>
+                              </mdb-card-body>
+                              
+                              
+                            </div>
+                            </div>
+                            <mdb-card-footer class="text-muted">
+                                <div *ngFor='let tag of result.filter_details' class="chip" >
+                                    {{tag.name}}
+                                </div>
+                            </mdb-card-footer>
+                          </mdb-card>
+                    </span>
+                      <!--/.Card-->
+                  </div>
+                  <div class="row" *ngIf='results.length === 0'>
+                    <div class="col-md-12 text-left">
+                        <blockquote class="blockquote bq-danger">
+                          <p class="bq-title">
+                            Approof&reg;
+                          </p>
+                          <p class="deep-orange-text">
+                            {{langFields.noResults}}
+                          </p>
+                        </blockquote>
+                    </div>
+                  </div>
+                  
+
+
+                </div>
+              <hr> Generated URL : {{payload}}
+                </div>
+            </div>
+        </div>
+      </div>
+          
+      <br>
+    </section>
+    <!-- end approof home -->
+</div>
+<app-footer></app-footer>

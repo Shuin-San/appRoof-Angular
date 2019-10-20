@@ -1,0 +1,99 @@
+<app-navbar></app-navbar>
+<app-head-cta></app-head-cta>
+<div class="container">  
+    <app-secondary-navigation></app-secondary-navigation>
+
+    <mdb-breadcrumb>
+        <mdb-breadcrumb-item class="blue-text"><a [routerLink]="['/']">Home</a></mdb-breadcrumb-item>
+        <mdb-breadcrumb-item class="blue-text"><a [routerLink]="['/oplossingen']">Oplossingen</a></mdb-breadcrumb-item>
+        <mdb-breadcrumb-item class="blue-text"><a [routerLink]="['/oplossingen/waterdichting/']">Waterdichting</a></mdb-breadcrumb-item>
+        <mdb-breadcrumb-item class="blue-text"><a [routerLink]="['/oplossingen/waterdichting/plat-dak/']"></a>Standaard Plat Dak</mdb-breadcrumb-item>
+        <mdb-breadcrumb-item class="active"><a>Waterdichting</a></mdb-breadcrumb-item>
+
+    </mdb-breadcrumb>
+<!-- Page Intro -->
+<div class="row">
+    <div class="col-md-6">
+        <h1 class="h2-reponsive text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+          data-wow-delay="0.3s"><strong>Standaard plat dak</strong></h1>
+        <h2 class="h6-responsive font-weight-bold mb-0 mb-4 wow fadeInDown" data-wow-delay="0.4s">
+          <strong>
+              Krijg vrijblijvend een offerte van een Derbigum specialist in uw buurt
+          </strong>
+        </h2>
+       
+        <h6 class="text-left mb-4  wow fadeInDown" data-wow-delay="0.4s">
+          Ontvangt u graag een <strong>vrijblijvende offerte op maat</strong> voor de aanleg van uw plat dak?<br>
+          Of wenst u <strong>een offerte op maat</strong> voor de renovatie van uw <strong>plat dak</strong>?<br>
+          <br>          
+          <strong>Vul onderstaand formulier nu</strong> in en wij laten u zo snel mogelijk iets weten!<br>
+          Wenst u meer informatie? Bel ons op <a href="tel:+32 2 334 87 00">+32 2 334 87 00</a>
+        </h6>
+      </div>
+      <div class="col-md-6">
+          <!--Card-->
+          <mdb-card cascade="true" reverse="true" wider="true">
+      
+            <!--Card image-->
+            <div class="view view-cascade overlay waves-light" mdbWavesEffect>
+              <mdb-card-img src="https://derbigum.be/nl/wp-content/uploads/sites/2/2017/02/Screenshot_1.png"></mdb-card-img>
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+            <!--/Card image-->
+      
+            <mdb-card-body cascade="true" class="text-center">
+              <!--Card content-->
+              <!--Title-->
+              <h4 class="card-title wow fadeIn" data-wow-delay="0.4s">
+                <strong>Beste prijs van onze gekwalificeerde dakdekkers!</strong>
+              </h4>
+      
+              <mdb-card-text class="text-left">
+                  <span class="wow fadeInLeft" data-wow-delay="0.4s"><mdb-icon fas icon="check" class="green-text"></mdb-icon> Vraagt een minimum aan onderhoud<br></span>
+                  <span class="wow fadeInLeft" data-wow-delay="0.5s"><mdb-icon fas icon="check" class="green-text"></mdb-icon> Hoge mechanische en UV-weerstand<br></span>
+                  <span class="wow fadeInLeft" data-wow-delay="0.6s"><mdb-icon fas icon="check" class="green-text"></mdb-icon> Bewezen levensduur van 40 jaar<br></span>
+                  <span class="wow fadeInLeft" data-wow-delay="0.7s"><mdb-icon fas icon="check" class="green-text"></mdb-icon> 100% Recycleerbaar</span>
+              </mdb-card-text>
+      
+            </mdb-card-body>
+            <!--/.Card content-->
+      
+          </mdb-card>
+          <!--/.Card-->
+        </div>
+</div>
+<!-- END Page Intro -->
+<hr>
+
+<!-- start form -->
+    <app-offer-form></app-offer-form>
+<!-- end form-->
+<hr>
+<!-- start bottom CTA -->
+
+   <!-- Section: Contact v.2 -->
+   <section class="my-5">
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">Vragen? We staan steeds voor je klaar!</h2>
+    <!-- Section description -->
+    <p class="text-center w-responsive mx-auto mb-5">
+      Ons team staat van maandag tot vrijdag en van 8.30 tot 17.00 uur voor u klaar op het nummer +32 2 334 87 00 of stuur een email naar info@derbigum.be
+    </p>
+  
+    <!-- Grid row -->
+    <div class="row">
+      <div class="col text-center">
+          <a mdbBtn color="primary" mdbWavesEffect>Contacteer ons</a> of vraag je <u>gratis offerte</u> aan
+      </div> 
+    </div>
+    <!-- Grid row -->
+  
+  </section>
+    <!-- Section: Contact v.2 -->
+  <!-- CTA End -->
+
+<!-- End Bottom CTA -->
+</div>
+<app-footer></app-footer>

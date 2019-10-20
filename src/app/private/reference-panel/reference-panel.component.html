@@ -1,0 +1,32 @@
+<section id="references">
+  <div class="row">
+    <div class="col-md-8">
+      <h2 class="py-5"><strong>Meer dan 30.000 mensen vertrouwen reeds op Derbigum</strong></h2>
+    </div>
+    <div class="col-md-4 py-5">
+      <button type="button" mdbBtn color="light" mdbWavesEffect>Bekijk alle referenties</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor='let reference of references'>
+      <mdb-card>
+          <!--Card image-->
+          <mdb-card-img src={{reference.thumb}} alt="Card image cap" mdbWavesEffect></mdb-card-img>
+          <!--Card content-->
+          <mdb-card-body>
+        
+            <!--Title-->
+            <mdb-card-title>
+              <h4><a href={{reference.link}}>{{reference.title}}</a></h4>
+            </mdb-card-title>
+        
+            <!--Text-->
+            <mdb-card-text> 
+              {{reference.shortDesc}}
+            </mdb-card-text>
+        
+          </mdb-card-body>
+        </mdb-card>
+    </div>
+  </div>
+</section>

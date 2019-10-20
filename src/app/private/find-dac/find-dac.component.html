@@ -1,0 +1,51 @@
+<section id="findDAC">
+
+    <!--Grid row-->
+    <br>
+    <div class="row">
+
+      <!--Grid column-->
+      <div class="col-md-12 mb-4">
+        <div class="card card-image" style="background-image: url(https://i.pinimg.com/originals/f7/a0/9a/f7a09a1676ca914765571bb238939279.jpg); background-size: 100%; background-position: center;">
+          <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+            <div class="col-md-6 text-left">
+              <h3 class="card-title py-3 font-weight-bold"><strong>Vind een plaatser in je buurt</strong></h3>
+              <p>De voordelen van een Derbigum erkende plaatser</p>
+              <ul>
+                  <li>
+                    Gratis advies
+                  </li>
+                  <li>
+                    Onderhoud na plaatsing
+                  </li>
+                  <li>
+                    Geniet van de Derbigum garantie
+                  </li>
+                  <li>
+                    Dakinspectie en controle na plaatsing
+                  </li>
+                </ul>
+            </div>
+            <div class="col-md-4 text-left">
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="inputGroup-sizing-default">Vul je postcode in</span>
+                    </div>
+                  <input type="text" [(ngModel)]="query" ng-focus="focus=true" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+            <div class="col-md-2 text-left">
+              <div class="mb-4">
+                <br>
+                <span *ngFor="let code of PostCodes">
+                  <span *ngIf="code.zip == query">
+                      <p class="h5 animated fadeIn" style="vertical-align: center">{{ code.city }}<br><br></p>
+                  </span>
+                </span>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>

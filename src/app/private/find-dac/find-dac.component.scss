@@ -1,0 +1,36 @@
+.intro-header {
+    height: unset !important;
+  }
+  .intro-2 {
+    background: url("http://roofersbrooklyn.net/wp-content/uploads/2017/01/manyellowhardhatroofwork.jpg")no-repeat center center;
+    background-size: cover;
+  }
+  .view {
+    height: 100vh !important;
+  }
+  .top-nav-collapse {
+    background-color: #3f51b5 !important;
+  }
+ 
+  .rgba-gradient .full-bg-img {
+    background: linear-gradient(45deg, rgba(83, 125, 210, 0.4), rgba(178, 30, 123, 0.4) 100%);
+  }
+  
+  .md-form .prefix {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .md-form label {
+    color: #ffffff;
+  }
+  h6 {
+    line-height: 1.7;
+  }
+  @media (max-width: 740px) {
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+      height: 1040px;
+    }
+  }

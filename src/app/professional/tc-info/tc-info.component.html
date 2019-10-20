@@ -1,0 +1,25 @@
+<hr>
+<div class="row">
+  <!-- <div class="col-4" *ngFor="let course of Courses.lang_nl_t1; let i = index;"> -->
+  <div class="col-4">
+    <mdb-card class="text-center">
+        <mdb-card-header>{{Courses.lang_nl_t1[0].date}}</mdb-card-header>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h3>{{Courses.lang_nl_t1[0].titre}}</h3>
+          </mdb-card-title>
+          <mdb-card-text>
+            <hr>
+            Beschikbare plaatsen : {{Courses.lang_nl_t1[0].placesdisponibles}}/{{Courses.lang_nl_t1[0].nombre_personnes}}
+          </mdb-card-text>
+          <a href="" mdbBtn color="primary">Schrijf u in nu!</a>
+        </mdb-card-body>
+        <mdb-card-footer class="text-muted">
+          <a href="{{Courses.lang_nl_t1.volist[0].googlemap}}" target="_blank"> 
+            Plaats
+          </a>
+        
+        </mdb-card-footer>
+      </mdb-card>
+  </div>
+</div>

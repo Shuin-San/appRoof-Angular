@@ -1,0 +1,49 @@
+<!--Main Navigation-->
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light rgba-black-slight" [containerInside]="true">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" href="#"></a></mdb-navbar-brand>
+
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link waves-light" mdbWavesEffect>Particulier</a>
+      </li>
+      <li class="nav-item active">
+        <a routerLink="/pro" class="nav-link waves-light" mdbWavesEffect>Professional<span class="sr-only">(current)</span></a>
+      </li>  
+    </ul>
+    <!-- Links -->
+<div>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link">Over Derbigum&reg;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Technisch advies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Producten</a>
+          </li>
+          <li class="nav-item dropdown" dropdown>
+              <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+              België - NL<span class="caret"></span></a>
+              <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                  <a class="dropdown-item waves-light" mdbWavesEffect href="#">Belgique - FR</a>
+              </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_blank" href="https://www.linkedin.com/company/derbigum/"><mdb-icon fab icon="linkedin"></mdb-icon></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" terge="_blank" href="https://www.facebook.com/derbigum/"><mdb-icon fab icon="facebook-square"></mdb-icon></a>
+          </li>
+    </ul>
+  </div>
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>

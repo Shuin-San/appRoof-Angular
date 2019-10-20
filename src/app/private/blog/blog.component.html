@@ -1,0 +1,66 @@
+<section id="blog_posts">
+
+
+    <!-- Section: Blog v.3 -->
+  <section class="my-5 grey lighten-2" id="blogSection">
+
+    <!-- Section heading --><br>
+    <h2 class="h1-responsive font-weight-bold text-center my-10">Meest recente blogberichten</h2>
+    <!-- Section description -->
+    <p class="text-center dark-grey-text w-responsive mx-auto mb-5">Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <!-- Grid row -->
+    <div class="no-data text-center" *ngIf="Post.length == 0">
+      <p>There are no posts added yet!</p>
+    </div>
+
+    <div *ngIf="Post.length !== 0">
+    <span *ngFor="let posts of Post; let i = index">
+      
+
+      <!-- Grid column -->
+      <div *ngIf="i<5" class="row my-5">
+      <div class="col-lg-5 col-xl-4">
+
+        <!-- Featured image -->
+        <div class="view overlay rounded z-depth-1-half mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+          <img class="img-fluid" src="{{posts['_embedded']['wp:featuredmedia'][0].source_url}}" alt="Sample image">
+          <a href="{{posts.link}}" target="_blank" >
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-7 col-xl-8">
+
+        <!-- Post title -->
+        <h3 class="font-weight-bold mb-3"><strong>{{posts.title.rendered}}</strong></h3>
+        <!-- Excerpt -->
+        <p class="dark-grey-text" [innerHTML]='posts.excerpt.rendered'></p>
+        <!-- Post data -->
+        <p><a class="font-weight-bold">Derbigum</a>, {{posts.date | date}}</p>
+        <!-- Read more button -->
+        <a href="{{posts.link}}" target="_blank" mdbBtn type="button" color="elegant" mdbWavesEffect>
+          <mdb-icon fas icon="plus"></mdb-icon> | Lees meer
+        </a>
+
+      </div>
+      <!-- Grid column -->
+      
+      <hr class="my-5">
+      <br><br>
+    </div>
+    </span>
+    <!-- Grid row -->
+  </div>
+
+    
+  </section>
+  <!-- Section: Blog v.3 -->
+
+</section>

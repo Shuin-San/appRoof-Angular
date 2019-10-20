@@ -1,0 +1,54 @@
+<!--Navbar-->
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-light rgba-black-slight">
+
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/pro"><i class="fa fa-home"></i></a></mdb-navbar-brand>
+  
+  <!-- Collapsible content -->
+  <links>
+
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+          <!-- Dropdown -->
+          <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                Mijn Derbigum&reg;<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/myDerbigum">Dashboard </a>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Mijn Leads - <mdb-badge primary="true">2</mdb-badge></a>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Mijn projecten</a>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Derbigum APPROOF&reg;</a>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Garanties</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item waves-light" mdbWavesEffect href="#">Uitloggen</a>
+            </div>
+            </li>
+
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Opleidingen</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect>Technische dienst</a>
+          </li>
+
+          <li class="nav-item right">
+              <a class="nav-link waves-light" mdbWavesEffect>Contact</a>
+          </li>
+          
+      </ul>
+      <ul class="navbar-nav nav-flex-icons" *ngIf='isAuthenticated'>
+        <li class="nav-item">
+            <span class="chip" style="margin-top:15px;">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person"> <mdb-icon fas icon="cube" class="left"></mdb-icon> John Doe
+            </span>
+        </li>
+      </ul>
+      <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+  
+  </mdb-navbar>
+  <!--/.Navbar-->
+

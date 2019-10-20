@@ -1,0 +1,10 @@
+<div class="chip lg" *ngIf="isAuthenticated">
+  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person"> <span *ngIf='user !== undefined' >{{this.user.firstname}} {{this.user.lastname}}</span>
+  <br>
+  <span (click)="logout()">Logout <mdb-icon fas icon="sign-out-alt"></mdb-icon> </span> | <a routerLink="/myDerbigum/pro/profile">Mijn account <mdb-icon fas icon="user-circle"></mdb-icon></a>
+
+</div>
+
+<div class="chip lg" *ngIf="!isAuthenticated">
+  <span routerLink="/myDerbigum/pro/login">Login <mdb-icon fas icon="sign-out-alt"></mdb-icon> </span>
+</div>
