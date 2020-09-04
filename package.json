@@ -39,7 +39,7 @@
     "jarallax": "^1.10.3",
     "ng-uikit-pro-standard": "file:ng-uikit-pro-standard-7.5.0.tgz",
     "ngx-facebook": "2.4.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.1",
     "rxjs": "^6.0.0",
     "screenfull": "3.3.x",
     "smoothscroll-polyfill": "0.4.3",
