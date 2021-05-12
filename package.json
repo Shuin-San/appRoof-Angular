@@ -30,7 +30,7 @@
     "@okta/okta-auth-js": "^2.6.0",
     "@okta/okta-signin-widget": "^2.20.1",
     "angular5-csv": "0.2.10",
-    "chart.js": "2.7.3",
+    "chart.js": "2.9.4",
     "classlist.js": "1.1.x",
     "core-js": "2.5.7",
     "easy-pie-chart": "2.1.x",
